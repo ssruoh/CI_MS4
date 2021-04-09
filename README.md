@@ -1,45 +1,162 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# The ELEX Fitness Website
 
-Welcome ssruoh,
+** **
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+## UX
 
-## Gitpod Reminders
+#### User stories
+**As a first time visitor:**
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* 
 
-`python3 -m http.server`
+**As a returning visitor:**
+* 
 
-A blue button should appear to click: _Make Public_,
+** **
 
-Another blue button should appear to click: _Open Browser_.
+## Database Structure
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+** **
 
-A blue button should appear to click: _Make Public_,
+## Design
 
-Another blue button should appear to click: _Open Browser_.
+**Color Scheme**
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-## Updates Since The Instructional Video
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+**Typography**
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+**Imagery**
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+** **
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Wireframes
 
----
+[Wireframes]() 
+were drafted in MS Paint.
 
-Happy coding!
+** **
+
+## Features
+
+* 
+
+**Features To Implement**
+
+* 
+
+** **
+
+## Languages used
+
+* 
+
+## Frameworks, Libraries & programs
+
+1. 
+* 
+2. 
+* 
+
+** **
+
+## Testing
+
+**Tools**
+
+[Results]()
+
+[Results]()
+
+[Results]()
+
+**Manual**
+
+Home page
+
+* 
+
+**Responsiveness**
+
+* 
+
+**Known Issues**
+
+* 
+
+** **
+
+## Deployment
+
+
+
+**Forking The Repository**
+
+The copy of the Github repository can be forked to another account for viewing or editing without affecting the original one with the following steps:
+
+1. Login to Github and locate the [repository](https://github.com/ssruoh/CI_MS4)
+2. On top right, right under the Account menu and Notifications, click on the Fork button. This will create a copy of the repository to your Github account.
+
+**Creating A Local Clone**
+
+1. Login to Github and locate the [repository](https://github.com/ssruoh/CI_MS4)
+2. Click on the green Code button
+3. Click on the clipboard icon under "Clone with HTTPS" to copy the link
+4. Open Git Bash
+5. Change the current working directory to the one where you want the clone to be created.
+6. Type `git clone` and paste the URL you copied from the clipboard:
+
+```
+$ git clone https://github.com/ssruoh/CI_MS4
+```
+
+7. Press Enter to create a local clone.
+
+```
+$ git clone https://github.com/ssruoh/CI_MS4
+> Cloning into `Spoon-Knife`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+**Setting up the environment variables**
+
+**Heroku**
+
+1. 
+
+**AWS**
+
+1. 
+
+** **
+
+## Testing User Requirements In UX Section
+
+**First time visitors**
+
+> 
+* 
+
+**Returning visitors:**
+
+> 
+* 
+
+** **
+
+## Credits
+
+**Code**
+
+**Content**
+
+**Media**
+
+**Acknowledgments**
