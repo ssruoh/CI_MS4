@@ -57,9 +57,9 @@ were drafted in MS Paint.
 
 ## Frameworks, Libraries & programs
 
-1. 
+1. FontAwesome
 * 
-2. 
+2. Google Fonts
 * 
 
 ** **
