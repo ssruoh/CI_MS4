@@ -159,4 +159,6 @@ $ git clone https://github.com/ssruoh/CI_MS4
 
 **Media**
 
+Hero image from https://www.networldsports.ie/metis-dumbbell-rack-sets-3-tier.html
+
 **Acknowledgments**
