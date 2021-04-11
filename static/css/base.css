@@ -1,4 +1,14 @@
 body {
     background: url('/media/hero-image.jpg') no-repeat center center fixed;
     background-size: cover;
+    font-family: 'Assistant', sans-serif;
+}
+
+.jumbotron {
+    background: white !important;
+    border-radius: 0.5rem !important;
+}
+
+.saira-font {
+    font-family: 'Saira', sans-serif;
 }
