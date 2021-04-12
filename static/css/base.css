@@ -4,9 +4,21 @@ body {
     font-family: 'Assistant', sans-serif;
 }
 
+.header-container {
+    min-height: 100vh;
+}
+
+.callout-container {
+    margin-top: 80px;
+}
+
 .jumbotron {
     background: white !important;
     border-radius: 0.5rem !important;
+}
+
+.navigation {
+    background-color: white;
 }
 
 .saira-font {

@@ -43,10 +43,8 @@
     <title>ELEX Fitness {% block extra_title %}{% endblock %}</title>
 </head>
 
-<body>
-
-    <header class="container-fluid fixed-top">
-
+<body class="">
+    <header class="container-fluid fixed-top navigation">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="/">ELEX Fitness</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -65,7 +63,7 @@
                             Products
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Strength</a>
+                            <a class="dropdown-item" href=>Strength</a>
                             <a class="dropdown-item" href="#">Cardio</a>
                             <a class="dropdown-item" href="#">Accessories</a>
                         </div>
@@ -84,14 +82,14 @@
                         <a class="nav-link" href="#">My Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Log Out</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
+                        <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Log In</a>
+                        <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -110,29 +108,28 @@
                 </form>
 
                 <li class="nav-item list-inline-item">
-                    <a class="" href="">
+                    <a class="nav-link" href="">
                         <div class="text-center">
                             <div><i class="fas fa-shopping-basket"></i></div>
                         </div>
+                        <p>
+                            {% if grand_total %}
+                            ${{ grand_total|floatformat:2 }}
+                            {% else %}
+                            0.00$
+                            {% endif %}
+                        </p>
                     </a>
                 </li>
-
 
             </div>
         </nav>
 
-
-
-
     </header>
-
 
     {% if messages %}
     <div class="message-container"></div>
     {% endif %}
-
-    {% block page_header %}
-    {% endblock %}
 
     {% block content %}
     {% endblock %}
@@ -145,7 +142,32 @@
 
     {% endblock %}
 
-
+    <footer class="container-fluid fixed-bottom bg-light pt-2">
+        <div class="row">
+            <div class="col-12 col-lg-4 text-center">
+                <p>Selling fitness stuff since like, 3 days ago</p>
+            </div>
+            <div class="col-12 col-lg-4">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item">
+                        <a target="_blank" href="https://www.instagram.com/">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a target="_blank" href="https://www.facebook.com/">
+                            <i class="fab fa-facebook" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-lg-4 text-center">
+                <p>Copyright</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
