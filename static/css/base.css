@@ -4,12 +4,12 @@ body {
     font-family: 'Assistant', sans-serif;
 }
 
-.header-container {
-    min-height: 100vh;
+.products-container {
+    margin-top: 120px;
 }
 
 .callout-container {
-    margin-top: 80px;
+    margin-top: 100px;
 }
 
 .jumbotron {
@@ -23,4 +23,14 @@ body {
 
 .saira-font {
     font-family: 'Saira', sans-serif;
+}
+
+.products-bg-cover {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
 }
