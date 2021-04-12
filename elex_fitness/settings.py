@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # ELEX Fitness apps
     'home',
+    'products',
 ]
 
 MIDDLEWARE = [
