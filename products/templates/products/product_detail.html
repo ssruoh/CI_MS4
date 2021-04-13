@@ -3,9 +3,34 @@
 
 {% block content %}
 <div class="products-bg-cover"></div>
-<div class="container products-container">
+<div class="container product-container">
     <div class="row">
-
+        <div class="col-12 col-md-6 pb-3">
+            <div class="image-container">
+                {% if product.image %}
+                <a href="{{ product.image.url }}" target="_blank">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
+                </a>
+                {% else %}
+                <a href="">
+                    <img src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}" class="card-img-top img-fluid">
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-12 col-md-6 pb-3">
+            <div>
+                <p>{{ product.name }}</p>
+                <p>{{ product.price }}</p>
+                <p>{{ product.description }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 review-container">
+        In computer programming, a placeholder is a character, word, or string of characters that temporarily
+        takes the place of the final data. For example, a programmer may know that she needs a certain number of
+        values or variables, but doesn't yet know what to input. She can use a placeholder as a temporary
+        solution until a proper value or variable can be assigned.
     </div>
 </div>
 
