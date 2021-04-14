@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # ELEX Fitness apps
     'home',
     'products',
+    'bag',
 ]
 
 MIDDLEWARE = [
