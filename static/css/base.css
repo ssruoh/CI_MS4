@@ -16,6 +16,10 @@ body {
     margin-top: 100px;
 }
 
+.bag-container {
+    margin-top: 160px;
+}
+
 .jumbotron {
     background: white !important;
     border-radius: 0.5rem !important;
@@ -29,7 +33,7 @@ body {
     font-family: 'Saira', sans-serif;
 }
 
-.products-bg-cover {
+.bg-cover {
     height: 100%;
     width: 100%;
     top: 0;

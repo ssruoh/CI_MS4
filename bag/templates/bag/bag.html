@@ -2,10 +2,28 @@
 {% load static %}
 
 {% block content %}
-
-<div class="container callout-container">
+<div class="bg-cover"></div>
+<div class="container bag-container">
     <div class="row">
         <div class="col-12">
+            <h1>Your Shopping Bag</h1>
+        </div>
+
+        <div class="col-12">
+
+            {% if bag_items %}
+            <div class="table-responsive">
+
+            </div>
+            {% else %}
+            <p>Your bag is empty!</p>
+            <a href="{% url 'products' %}" class="btn btn-primary">
+                <span>
+                    <i class="fas fa-cart-plus"></i>
+                </span>
+                <span>Why not add something to it?</span>
+            </a>
+            {% endif %}
 
         </div>
     </div>
