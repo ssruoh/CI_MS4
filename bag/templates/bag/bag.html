@@ -13,7 +13,63 @@
 
             {% if bag_items %}
             <div class="table-responsive">
-                {{ bag_items }}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Description</th>
+                            <th scope="col"></th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+
+                    {% for item in bag_items %}
+                    <tr>
+                        <td>
+                            <img src="{{ item.product.image.url }}" alt="{{ product.name }}" class="img-fluid">
+                        </td>
+                        <td>
+                            <p>{{ item.product.sku }}</p>
+                            <p>SKU: {{ item.product.name }}</p>
+                        </td>
+                        <td>
+                            <p>{{ item.quantity }}</p>
+
+                        </td>
+                        <td>
+                            <p>{{ item.product.price }}</p>
+
+                        </td>
+                        <td>
+                            <p>{{ item.product.price }}</p>
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                    <tr>
+                        <td colspan="5">
+                            <p>Bag: ${{ total|floatformat:2 }}</p>
+                            <p>Delivery: ${{ delivery|floatformat:2 }}</p>
+                            <h6>Grand Total: ${{ grand_total|floatformat:2 }}</h6>
+                            {% if delivery_delta > 0 %}
+                            <p>If you spend ${{ delivery_delta }} more we will deliver your order for free!</p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <a href="{% url 'products' %}" class="btn btn-primary">
+                                <span>Keep Shopping</span>
+                            </a>
+                            <span class="px-3">or</span>
+                            <a href="" class="btn btn-primary">
+                                <span>Checkout</span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
             </div>
             {% else %}
             <p>Your bag is empty!</p>
