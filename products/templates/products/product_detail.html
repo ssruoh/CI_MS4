@@ -20,9 +20,34 @@
         </div>
         <div class="col-12 col-md-6 pb-3">
             <div>
-                <p>{{ product.name }}</p>
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.category.friendly_name }}</p>
                 <p>{{ product.price }}</p>
                 <p>{{ product.description }}</p>
+                <form action="{% url 'add_to_bag' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-12 col-md-6">
+                            <p>Quantity:</p>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="number" class="form-control qty_input" name="quantity"
+                                        id="id_qty_{{ product.id }}" data-item_id="{{ product.id }}" value="1" min="1"
+                                        max="10">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <a href="{% url 'products' %}" class="btn btn-primary">
+                                <span>
+                                    Continue Shopping
+                                </span>
+                            </a>
+                            <input type="submit" value="Add Product" class="btn btn-primary">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
