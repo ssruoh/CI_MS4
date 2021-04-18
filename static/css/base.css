@@ -50,3 +50,7 @@ body {
     position: fixed;
     z-index: 9999999;
 }
+
+.toast-close-button {
+    margin-left: auto;
+}
