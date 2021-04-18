@@ -40,11 +40,11 @@
                                     <input type="number" class="form-control qty_input" name="quantity"
                                         id="id_qty_{{ item.item_id }}" data-item_id="{{ item.item_id }}"
                                         value="{{ item.quantity }}" min="1" max="10">
-                                    <a class="btn btn-primary update-quantity"><span>Update</span></a>
-                                    <a class="btn btn-primary delete-product"
-                                        id="remove_{{ item.item_id }}"><span>Delete</span></a>
                                 </div>
                             </form>
+                            <a class="btn btn-primary update-quantity"><span>Update</span></a>
+                            <a class="btn btn-primary delete-product"
+                                id="remove_{{ item.item_id }}"><span>Delete</span></a>
 
                         </td>
                         <td>
@@ -98,13 +98,13 @@
 
 <script type="text/javascript">
     // Update product quantity button
-    $('update-quantity').click(function (e) {
+    $('.update-quantity').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
 
     // Delete product & reload bag button
-    $('delete-product').click(function (e) {
+    $('.delete-product').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var url = `/bag/remove/${itemId}`;
@@ -116,7 +116,6 @@
             .done(function () {
                 location.reload();
             });
-
     })
 </script>
 
