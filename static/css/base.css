@@ -42,3 +42,11 @@ body {
     background: white;
     z-index: -1;
 }
+
+/* Toasts */
+.message-container {
+    top: 80px;
+    right: 20px;
+    position: fixed;
+    z-index: 9999999;
+}
