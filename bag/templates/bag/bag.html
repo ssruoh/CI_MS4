@@ -34,14 +34,14 @@
                             <p>SKU: {{ item.product.name }}</p>
                         </td>
                         <td>
-                            <form action="" method="POST" class="update-form">
+                            <form action="{% url 'update_bag' item.item_id %}" method="POST" class="update-form">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <input type="number" class="form-control qty_input" name="quantity"
                                         id="id_qty_{{ item.item_id }}" data-item_id="{{ item.item_id }}"
                                         value="{{ item.quantity }}" min="1" max="10">
-                                    <a class="btn btn-primary update-quantity" href=""><span>Update</span></a>
-                                    <a class="btn btn-primary delete-product" href=""
+                                    <a class="btn btn-primary update-quantity"><span>Update</span></a>
+                                    <a class="btn btn-primary delete-product"
                                         id="remove_{{ item.item_id }}"><span>Delete</span></a>
                                 </div>
                             </form>
