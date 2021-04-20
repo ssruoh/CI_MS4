@@ -7,8 +7,8 @@
 <div class="bg-cover"></div>
 <div class="container bag-container">
     <div class="row">
-        <div class="col-12">
-            <h1 class="text-center">Your Shopping Bag</h1>
+        <div class="col-12 col-lg-6">
+            <h1 class="text-center">Order Summary</h1>
             {% if bag_items %}
             <div class="table-responsive">
                 <table class="table">
@@ -25,25 +25,18 @@
                     {% for item in bag_items %}
                     <tr>
                         <td>
+                            {% if item.product.image %}
                             <img src="{{ item.product.image.url }}" alt="{{ product.name }}" class="img-fluid">
+                            {% else %}
+                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}" class="img-fluid">
+                            {% endif %}
                         </td>
                         <td>
                             <p>SKU: {{ item.product.sku }}</p>
                             <p>{{ item.product.name }}</p>
                         </td>
                         <td>
-                            <form action="{% url 'update_bag' item.item_id %}" method="POST" class="update-form">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <input type="number" class="form-control qty_input" name="quantity"
-                                        id="id_qty_{{ item.item_id }}" data-item_id="{{ item.item_id }}"
-                                        value="{{ item.quantity }}" min="0" max="10">
-                                </div>
-                            </form>
-                            <a class="btn btn-primary update-quantity"><span>Update</span></a>
-                            <a class="btn btn-primary delete-product"
-                                id="remove_{{ item.item_id }}"><span>Delete</span></a>
-
+                            <p>{{ item.quantity }}</p>
                         </td>
                         <td>
                             <p>{{ item.product.price }}</p>
@@ -72,7 +65,7 @@
 
         </div>
 
-        <div class="col-12">
+        <div class="col-12 col-lg-6">
             <p class="text-center">Fill out the shipping details here</p>
             <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
                 {% csrf_token %}
