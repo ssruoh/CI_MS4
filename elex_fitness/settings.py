@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'checkout',
     # Misc
     'crispy_forms',
+    'crispy_bootstrap5'
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'elex_fitness.urls'
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 TEMPLATES = [
@@ -82,6 +84,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',  # Needed for allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
             ],
             'builtins': [

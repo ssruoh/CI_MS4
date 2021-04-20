@@ -2,16 +2,125 @@
 {% load static %}
 {% load bag_tools %}
 
+
 {% block content %}
 <div class="bg-cover"></div>
 <div class="container bag-container">
     <div class="row">
         <div class="col-12">
-            <h1>Your Shopping Bag</h1>
+            <h1 class="text-center">Your Shopping Bag</h1>
+            {% if bag_items %}
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Description</th>
+                            <th scope="col"></th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+
+                    {% for item in bag_items %}
+                    <tr>
+                        <td>
+                            <img src="{{ item.product.image.url }}" alt="{{ product.name }}" class="img-fluid">
+                        </td>
+                        <td>
+                            <p>SKU: {{ item.product.sku }}</p>
+                            <p>{{ item.product.name }}</p>
+                        </td>
+                        <td>
+                            <form action="{% url 'update_bag' item.item_id %}" method="POST" class="update-form">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input type="number" class="form-control qty_input" name="quantity"
+                                        id="id_qty_{{ item.item_id }}" data-item_id="{{ item.item_id }}"
+                                        value="{{ item.quantity }}" min="0" max="10">
+                                </div>
+                            </form>
+                            <a class="btn btn-primary update-quantity"><span>Update</span></a>
+                            <a class="btn btn-primary delete-product"
+                                id="remove_{{ item.item_id }}"><span>Delete</span></a>
+
+                        </td>
+                        <td>
+                            <p>{{ item.product.price }}</p>
+
+                        </td>
+                        <td>
+                            <p>{{ item.product.price | calc_subtotal:item.quantity }}</p>
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                    <tr>
+                        <td colspan="5">
+                            <p>Bag: ${{ total|floatformat:2 }}</p>
+                            <p>Delivery: ${{ delivery|floatformat:2 }}</p>
+                            <h6>Grand Total: ${{ grand_total|floatformat:2 }}</h6>
+                            {% if delivery_delta > 0 %}
+                            <p>If you spend ${{ delivery_delta }} more we will deliver your order for free!</p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            {% endif %}
+
         </div>
 
         <div class="col-12">
-            <p>Fill out the order form here</p>
+            <p class="text-center">Fill out the shipping details here</p>
+            <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
+                {% csrf_token %}
+                <fieldset>
+                    <legend class="fieldset-label">Details</legend>
+                    {{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
+                    {{ order_form.phone_number | as_crispy_field }}
+                    {{ order_form.street_address | as_crispy_field }}
+                    {{ order_form.post_code | as_crispy_field }}
+                    {{ order_form.town_or_city | as_crispy_field }}
+                    {{ order_form.county | as_crispy_field }}
+                    {{ order_form.country | as_crispy_field }}
+                    <div class="form-check form-check-inline">
+                        {% if user.is_authenticated %}
+                        <label for="save-info-id" class="form-check-label">Save these details as your default delivery
+                            information</label>
+                        <input type="checkbox" class="form-check-input" id="save-info-id" name="save-info" checked>
+                        {% else %}
+                        <label for="save-info-id" class="form-check-label">
+                            <a href="{% url 'account_signup' %}">Create Account</a>
+                            or
+                            <a href="{% url 'account_login' %}">Log In</a> to save your details.
+                        </label>
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="fieldset-label">Payment Information</legend>
+                    <!-- Stripe card element -->
+                    <div id="card-element"></div>
+                    <!-- Form errors -->
+                    <div class="text-danger" id="card-errors" role="alert"></div>
+                </fieldset>
+
+                <div class="checkout-button">
+                    <a href="{% url 'view_bag' %}" class="btn btn-primary">
+                        <span>Edit Bag</span>
+                    </a>
+                    <button id="checkout-button" class="btn btn-primary">
+                        <span>Checkout</span>
+                    </button>
+                    <p class="text-danger small">
+                        The order grand total of ${{ grand_total|floatformat:2 }} will be charged.
+                    </p>
+                </div>
+
+            </form>
         </div>
     </div>
 </div>

@@ -156,6 +156,8 @@ $ git clone https://github.com/ssruoh/CI_MS4
 
 **Code**
 
+SOF post noting a necessary, separate package for crispy_forms when using bootstrap5: https://stackoverflow.com/questions/65238459/templatedoesnotexist-at-users-register-bootstrap5-uni-form-html
+
 **Content**
 
 **Media**
