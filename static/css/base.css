@@ -54,3 +54,19 @@ body {
 .toast-close-button {
     margin-left: auto;
 }
+
+/* Checkout Stripe form */
+
+.StripeElement {
+    box-sizing: border-box;
+    height: 30px;
+    padding: 10px 10px;
+    border: 1px solid;
+    border-radius: 2px;
+    background-color: white;
+    border-color: black;
+}
+
+.StripeElement--invalid {
+    border-color: #dc3545;
+}
