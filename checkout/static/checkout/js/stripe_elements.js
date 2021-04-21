@@ -2,13 +2,13 @@ var stripe_public_key = $('#id_stripe_public_key').text().slice(1, -1);
 var client_secret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripe_public_key);
 var elements = stripe.elements();
-var card = elements.create('card');
 
+/* Slightly altered styling from https://stripe.com/en-nl/payments/elements */
 var style = {
     base: {
-        color: '#303238',
+        color: '#000',
         fontSize: '16px',
-        fontFamily: '"Open Sans", sans-serif',
+        fontFamily: '"Assistant", sans-serif',
         fontSmoothing: 'antialiased',
         '::placeholder': {
             color: '#CFD7DF',
@@ -22,6 +22,8 @@ var style = {
     },
 };
 
-card.mount('#card-element', {
+var card = elements.create('card', {
     style: style
 });
+
+card.mount('#card-element');

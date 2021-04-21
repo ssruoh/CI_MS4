@@ -99,6 +99,9 @@
                     <div id="card-element"></div>
                     <!-- Form errors -->
                     <div class="text-danger" id="card-errors" role="alert"></div>
+                    <p class="text-danger small mt-2">
+                        The order grand total of ${{ grand_total|floatformat:2 }} will be charged.
+                    </p>
                 </fieldset>
 
                 <div class="checkout-button mb-5">
@@ -108,9 +111,6 @@
                     <button id="checkout-button" class="btn btn-primary">
                         <span>Checkout</span>
                     </button>
-                    <p class="text-danger small">
-                        The order grand total of ${{ grand_total|floatformat:2 }} will be charged.
-                    </p>
                 </div>
 
             </form>

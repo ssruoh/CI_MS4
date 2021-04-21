@@ -59,14 +59,28 @@ body {
 
 .StripeElement {
     box-sizing: border-box;
-    height: 30px;
-    padding: 10px 10px;
+    height: 40px;
+    padding: 10px 12px;
     border: 1px solid;
-    border-radius: 2px;
+    border-radius: 5px;
     background-color: white;
-    border-color: black;
 }
 
 .StripeElement--invalid {
     border-color: #dc3545;
+    box-shadow: 0 1px 3px 0 #dc3545;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: white !important;
+}
+
+.fieldset-label {
+    position: relative;
+    right: 5px;
+}
+
+#card-element {
+    color: grey;
+    border: 1px solid grey;
 }
