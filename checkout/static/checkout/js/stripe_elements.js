@@ -27,3 +27,18 @@ var card = elements.create('card', {
 });
 
 card.mount('#card-element');
+
+// Card element validation error handling
+card.addEventListener('change', function (event) {
+    var errorDiv = document.getElementById('card-errors');
+    if (event.error) {
+        var html = `
+            <span role="alert">
+                ${event.error.message}
+            </span>
+        `
+        $(errorDiv).html(html);
+    } else {
+        errorDiv.textContent = '';
+    }
+});
