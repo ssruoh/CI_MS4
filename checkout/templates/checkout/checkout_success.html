@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="bg-cover"></div>
+<div class="container bag-container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Thank you for your purchase!</h1>
+            <p class="text-center">Order information below. A confirmation email should arrive shortly to
+                {{ order.email }}</p>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
