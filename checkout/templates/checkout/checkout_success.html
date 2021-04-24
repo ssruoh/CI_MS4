@@ -9,9 +9,62 @@
             <h1 class="text-center">Thank you for your purchase!</h1>
             <p class="text-center">Order information below. A confirmation email should arrive shortly to
                 {{ order.email }}</p>
+        </div>
+    </div>
+    {% for item in order.lineitems.all %}
+    <div class="row order-confirmation">
+        <div class="col-12">
+            <h2 class="text-center">
+                Order Summary
+            </h2>
+            <div>
+                <p><strong>Order Number: {{ order.order_number }}</strong></p>
+                <p><strong>{{ item.product.name }} - Quantity: {{ item.quantity }} for
+                        ${{ item.product.price }} each</strong></p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="row order-confirmation">
+        <div class="col-12">
+            <h2 class="text-center">
+                Delivery Details
+            </h2>
+            <div>
+                <p><strong>Full Name: {{ order.full_name }}</strong></p>
+                <p><strong>Email: {{ order.email }}</strong></p>
+                <p><strong>Phone Number: {{ order.phone_number }}</strong></p>
+                <p><strong>Street Address: {{ order.street_address }}</strong></p>
+                {% if order.post_code %}
+                <p><strong>Post Code: {{ order.post_code }}</strong></p>
+                {% endif %}
+                <p><strong>Town/City: {{ order.town_or_city }}</strong></p>
+                {% if order.county %}
+                <p><strong>County: {{ order.county }}</strong></p>
+                {% endif %}
+                <p><strong>Country: {{ order.country }}</strong></p>
+            </div>
 
         </div>
     </div>
+
+    <div class="row order-confirmation">
+        <div class="col-12">
+            <h2 class="text-center">
+                Order Total
+            </h2>
+            <div>
+                <p><strong>Order Total: {{ order.order_total }}</strong></p>
+                <p><strong>Delivery Fee: {{ order.delivery_cost }}</strong></p>
+                <p><strong>Grand Total: {{ order.grand_total }}</strong></p>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
 </div>
 
 {% endblock %}
