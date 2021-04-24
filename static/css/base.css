@@ -55,6 +55,8 @@ body {
     margin-left: auto;
 }
 
+/* Checkout */
+
 /* Checkout Stripe form */
 
 .StripeElement {
@@ -83,4 +85,25 @@ body {
 #card-element {
     color: grey;
     border: 1px solid grey;
+}
+
+/* Checkout loading icon */
+
+#loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 255, .85);
+    z-index: 9999;
+}
+
+.checkout-loading-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
 }
