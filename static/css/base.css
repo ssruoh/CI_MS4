@@ -57,6 +57,16 @@ body {
 
 /* Checkout */
 
+select,
+select option {
+    color: black;
+}
+
+select:invalid,
+select option[value=""] {
+    color: grey !important;
+}
+
 /* Checkout Stripe form */
 
 .StripeElement {
