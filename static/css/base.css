@@ -117,3 +117,15 @@ select option[value=""] {
     margin: 0;
     height: 100%;
 }
+
+
+/* Profiles */
+
+#id_default_country,
+#id_default_country option:not(:first_child) {
+    color: black;
+}
+
+#id_default_country option:first_child {
+    color: grey;
+}
