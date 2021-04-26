@@ -9,7 +9,7 @@ class UserProfile(models.Model):
     """
     Model that allows saving delivery details and displaying order history
     """
-    default_user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_phone_number = models.CharField(
         max_length=32, null=True, blank=True)
     default_country = CountryField(
