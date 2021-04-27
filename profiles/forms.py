@@ -10,7 +10,7 @@ class UserProfileForm(forms.ModelForm):
 
 def __init__(self, *args, **kwargs):
     """
-    Add placeholders, set autofocus on Full Name on page load and remove form
+    Add placeholders, set autofocus on Phone number on page load and remove form
     labels
     """
     super().__init__(*args, **kwargs)

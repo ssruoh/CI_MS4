@@ -129,3 +129,8 @@ select option[value=""] {
 #id_default_country option:first_child {
     color: grey;
 }
+
+.order-history {
+    max-height: 400px;
+    overflow-y: auto;
+}
