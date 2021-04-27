@@ -1,0 +1,24 @@
+Hello {{ order.full_name }},
+
+This email is a confirmation of your order from ELEX Fitness.
+
+Order Number: {{ order.order_number }}
+Date: {{ order.date }}
+
+Total: {{ order.order_total }}
+Delivery: {{order.delivery_cost }}
+Grand Total: {{ order.grand_total }}
+
+Delivery Details:
+
+Street Address: {{ order.street_address }}
+Town/City: {{ order.town_or_city }}
+Country: {{ order.country }}
+
+We will contact you either via this email address or by phone at {{ order.phone_number }} if anything regarding your delivery comes up.
+
+If you have any questions, you can reach us at {{ contact_email }}.
+
+Best regards,
+ 
+Elex Fitness
