@@ -17,8 +17,7 @@ class Order(models.Model):
     full_name = models.CharField(max_length=60, null=False, blank=False)
     email = models.EmailField(max_length=60, null=False, blank=False)
     phone_number = models.CharField(max_length=32, null=False, blank=False)
-    country = CountryField(
-        blank_label='Country *', null=False, blank=False)
+    country = CountryField(blank_label='Country *', null=False, blank=False)
     post_code = models.CharField(max_length=32, null=True, blank=True)
     town_or_city = models.CharField(max_length=32, null=False, blank=False)
     street_address = models.CharField(max_length=100, null=False, blank=False)
@@ -45,7 +44,7 @@ class Order(models.Model):
         Update grand total when new line item is added
         """
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))[
-            'lineitem_total__sum']
+            'lineitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery_cost = self.order_total * \
                 settings.STANDARD_DELIVERY_PERCENTAGE / 100
@@ -67,8 +66,7 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False, blank=False,
-                              on_delete=models.CASCADE, related_name='lineitems')
+    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(
         Product, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)

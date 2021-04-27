@@ -1,0 +1,1 @@
+web: gunicorn elex_fitness.wsgi:application
