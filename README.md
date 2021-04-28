@@ -162,6 +162,9 @@ SOF post noting a necessary, separate package for crispy_forms when using bootst
 
 **Content**
 
+https://www.webmd.com/fitness-exercise/a-z/kettlebell-workout
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fsustainhealth.fit%2Flifestyle%2Fkettlebell-home-workout%2F&psig=AOvVaw1lzb6CAfGUpMet1wwYnXEv&ust=1619725423465000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJi3k8bZofACFQAAAAAdAAAAABAF
+
 **Media**
 
 Hero image from https://www.networldsports.ie/metis-dumbbell-rack-sets-3-tier.html
