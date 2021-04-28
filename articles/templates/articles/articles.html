@@ -6,17 +6,27 @@
 <div class="container products-container">
     <div class="row">
         {% for article in articles %}
-        <div class="col-12">
+        <div class="col-8 offset-2">
 
-            <div class="card">
+            <div class="card mt-5">
                 <div class="card-header">
-                    <p>{{ article.title }}<span class="ml-auto">{{ article.date }}</span></p>
+                    <h5>{{ article.title }}</h5>
                 </div>
                 <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>{{ article.description }}</p>
-                        <footer class="blockquote-footer">{{ article.author }}</footer>
-                    </blockquote>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <blockquote class="blockquote mb-0">
+                                <a href="{% url 'article_detail' article.id %}">
+                                    <p>{{ article.description }}</p>
+                                </a>
+                                <footer class="blockquote-footer">{{ article.author }}</footer>
+                            </blockquote>
+                        </div>
+                        <div class="col-lg-6">
+                            <a href="{% url 'article_detail' article.id %}"><img src="{{ article.image }}"
+                                    alt="Article Image" class="img-fluid"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
 

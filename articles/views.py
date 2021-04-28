@@ -1,11 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Article
 
 
 def all_articles(request):
     """
-    View to show all products
+    View to show all articles
     """
     articles = Article.objects.all().order_by('-date')
 
@@ -16,14 +16,14 @@ def all_articles(request):
     return render(request, 'articles/articles.html', context)
 
 
-"""
-# Adapted from https://djangocentral.com/building-a-blog-application-with-django/
-class ArticleList(generic.ListView):
-    queryset = Article.objects.order_by('-date')
-    template_name = 'articles.html'
+def article_detail(request, article_id):
+    """
+    View to show individual articles
+    """
+    article = get_object_or_404(Article, pk=article_id)
 
+    context = {
+        'article': article,
+    }
 
-class ArticleDetail(generic.DetailView):
-    model = Article
-    template_name = 'article_details.html'
-"""
+    return render(request, 'articles/article_detail.html', context)

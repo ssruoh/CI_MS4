@@ -157,13 +157,18 @@ $ git clone https://github.com/ssruoh/CI_MS4
 **Code**
 
 Creating blog app: [https://djangocentral.com/building-a-blog-application-with-django/]
+Image to right in cards: https://stackoverflow.com/questions/53182024/move-image-to-right-of-card-in-bootstrap/53182241
 
 SOF post noting a necessary, separate package for crispy_forms when using bootstrap5: https://stackoverflow.com/questions/65238459/templatedoesnotexist-at-users-register-bootstrap5-uni-form-html
 
 **Content**
 
+Products are from https://www.fitnessequipmentireland.ie and https://www.mcsport.ie.
+
 https://www.webmd.com/fitness-exercise/a-z/kettlebell-workout
-https://www.google.com/url?sa=i&url=https%3A%2F%2Fsustainhealth.fit%2Flifestyle%2Fkettlebell-home-workout%2F&psig=AOvVaw1lzb6CAfGUpMet1wwYnXEv&ust=1619725423465000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJi3k8bZofACFQAAAAAdAAAAABAF
+
+https://www.everydayhealth.com/fitness/how-to-clean-your-home-gym-equipment/
+https://images.everydayhealth.com/images/how-to-clean-your-home-gym-equipment-1440x810.jpg?w=1110
 
 **Media**
 

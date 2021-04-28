@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="bg-cover"></div>
+<div class="container products-container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center">{{ article.title }}</h2>
+        </div>
+        <div class="col-8 offset-2">
+            <p>By {{ article.author }}</p>
+            <img src="{{ article.image }}" alt="Article Image" class="img-fluid mb-5">
+        </div>
+        <div class="col-8 offset-2">
+            <p>{{ article.article_body }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% endblock %}
