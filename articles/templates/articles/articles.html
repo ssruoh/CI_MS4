@@ -5,6 +5,24 @@
 <div class="bg-cover"></div>
 <div class="container products-container">
     <div class="row">
+        <div class="col-12">
+            <h3 class="text-center">Fitness & Workout Articles</h3>
+            <p class="text-center">Here we allow registered users to offer their insights into health, fitness &
+                routines. Feel free to make your own conribution below.</p>
+
+            <div class="col-3 offset-3">
+                {% if request.user.is_authenticated %}
+                <a class="nav-link" href="{% url 'add_article' %}">Add your own article here!</a>
+                {% else %}
+                <p>If you're logged in, you can add an article yourself.</p><a class=" btn btn-primary nav-link"
+                    href="{% url 'account_login' %}">Log In</a>
+                {% endif %}
+                <p></p>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
         {% for article in articles %}
         <div class="col-8 offset-2">
 

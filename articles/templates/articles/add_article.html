@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="bg-cover"></div>
+<div class="container products-container">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-center">ARTICLE FORM</h3>
+            <hr>
+            <p class="text-center">Here we allow registered users to offer their insights into health, fitness &
+                routines. Feel free to make your own conribution below.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-8 offset-2">
+
+            <form action="{% url 'add_article' %}" method="POST" id="">
+                {% csrf_token %}
+                <fieldset>
+                    <legend class="fieldset-label">Details</legend>
+                    {{ article_form.title | as_crispy_field }}
+                    {{ article_form.description | as_crispy_field }}
+                    {{ article_form.article_body | as_crispy_field }}
+                    {{ article_form.image | as_crispy_field }}
+                </fieldset>
+                <div class="checkout-button mb-5">
+                    <a href="{% url 'view_bag' %}" class="btn btn-primary">
+                        <span>Edit Bag</span>
+                    </a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% endblock %}
