@@ -25,9 +25,10 @@
                     {{ article_form.article_body | as_crispy_field }}
                     {{ article_form.image | as_crispy_field }}
                 </fieldset>
-                <div class="checkout-button mb-5">
-                    <a href="{% url 'view_bag' %}" class="btn btn-primary">
-                        <span>Edit Bag</span>
+                <div class="mb-5">
+                    <button id="article-submit-button" class="btn btn-primary">
+                        <span>Checkout</span>
+                    </button>
                     </a>
                 </div>
 

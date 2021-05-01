@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic
 from django.contrib.auth.decorators import login_required
 from .models import Article
 from .forms import ArticleForm
+from django.contrib import messages
 
 
 def all_articles(request):
@@ -36,35 +37,30 @@ def add_article(request):
     """
     View to add an article
     """
-
     if request.method == 'POST':
         article_form_data = {
-            'title': request.POST['post_code'],
-            'description': request.POST['town_or_city'],
-            'article_body': request.POST['county'],
+            'title': request.POST['title'],
+            'description': request.POST['description'],
+            'article_body': request.POST['article_body'],
             'image': request.POST['image'],
         }
         article_form = ArticleForm(article_form_data)
-
-        if order_form.is_valid():
-            order = order_form.save(commit=False)
-            pid = request.POST.get('client_secret').split('_secret')[0]
-            order.stripe_pid = pid
-            order.original_bag = json.dumps(bag)
-            order.save()
-            for item_id, quantity in bag.items():
-                product = Product.objects.get(id=item_id)
-                order_line_item = OrderLineItem(
-                    order=order,
-                    product=product,
-                    quantity=quantity,
-                )
-                order_line_item.save()
-            request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+        if article_form.is_valid():
+            article = article_form.save(commit=False)
+            """ Use request.user to attach current user as author of article,
+            https://stackoverflow.com/questions/19799941/attaching-a-current-user-object-to-django-form
+            """
+            article.author = request.user
+            article.save()
+            return redirect(reverse('add_article'))
         else:
             messages.error(
-                request, 'There was an issue with your form. \
-                    Please recheck the fields.')
+                request, 'There was a problem with the form. Please check the fields.')
+    else:
+        article_form = ArticleForm()
+        template = 'articles/add_article.html'
 
-    return render(request, 'articles/add_article.html')
+        context = {
+            'article_form': article_form,
+        }
+        return render(request, template, context)
