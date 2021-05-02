@@ -49,11 +49,14 @@
             </div>
         </div>
     </div>
-    <div class="col-12 review-container">
-        In computer programming, a placeholder is a character, word, or string of characters that temporarily
-        takes the place of the final data. For example, a programmer may know that she needs a certain number of
-        values or variables, but doesn't yet know what to input. She can use a placeholder as a temporary
-        solution until a proper value or variable can be assigned.
+    <div class="row">
+        <div class="col-8 offset-2 review-container">
+            {% for review in reviews %}
+            <p>{{ review.reviewer }}</p>
+            <p>{{ review.review }}</p>
+            {% endfor %}
+            <p></p>
+        </div>
     </div>
 </div>
 
