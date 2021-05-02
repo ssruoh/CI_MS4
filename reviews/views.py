@@ -17,6 +17,7 @@ def review_product(request, product_id):
     adjusted from https://www.youtube.com/watch?v=pNVgLDKrK40
     """
     product = get_object_or_404(Product, pk=product_id)
+    reviews = product.reviews()
     user_review = None
     if request.method == 'POST':
         review_form = ReviewForm(request.POST)
@@ -29,4 +30,4 @@ def review_product(request, product_id):
             return redirect(reverse('product_detail', args=[product.id]))
     else:
         review_form = ReviewForm()
-    return render(request, 'product_detail.html', {'product_id': product_id, 'review_form': review_form})
+    return render(request, 'product_detail.html', {'product': product, 'user_review': user_review, 'reviews': reviews, 'review_form': review_form})

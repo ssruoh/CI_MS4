@@ -50,14 +50,59 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-8 offset-2 review-container">
-            {% for review in reviews %}
-            <p>{{ review.reviewer }}</p>
-            <p>{{ review.review }}</p>
+        <div class="col-8 offset-2 review-container mb-5">
+            <h5 class="text-center"><strong>Reviews</strong></h5>
+            {% for review in product.reviews.all %}
+            <hr>
+            <p><strong>By {{ review.reviewer }} on {{ review.date }}</strong></p>
+            <p>{{ review.product_review }}</p>
             {% endfor %}
-            <p></p>
+            <hr>
         </div>
+
+
+
+        {% if user.is_authenticated %}
+        <div class="row">
+            <form action="{% url 'review_product' product.id %}" method="POST" id="review-form">
+                {% csrf_token %}
+                <fieldset>
+                    <legend class="fieldset-label">Submit a review</legend>
+                    {{ review_form.product_review | as_crispy_field }}
+                </fieldset>
+                <div class="review-button mb-5">
+                    <button id="review-button" class="btn btn-primary">
+                        <span>Add Review</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+        {% endif %}
+
+
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
 </div>
 
 {% endblock %}

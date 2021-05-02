@@ -5,9 +5,9 @@ from .models import Review
 class ReviewForm(form.modelForm):
     class Meta:
         model = Review
-        fields = ('review',)
+        fields = ('product_review',)
         exclude = ('reviewer',)
 
         widgets = {
-            'review': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Write a review!', 'rows': '3'})
+            'product_review': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Write a review!', 'rows': '3'})
         }
