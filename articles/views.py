@@ -105,3 +105,20 @@ def edit_article(request, article_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_article(request, article_id):
+    """
+    View to delete article
+    """
+    article = get_object_or_404(Article, pk=article_id)
+    if article.author == request.user:
+        article.delete()
+        messages.success(request, 'Article deleted!')
+        return redirect(reverse('articles'))
+    else:
+        messages.info(
+            request, "Only the original author or \
+                administrator can delete articles.")
+        return redirect(reverse('articles'))
