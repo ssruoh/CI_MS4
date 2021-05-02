@@ -6,17 +6,15 @@
 <div class="container products-container">
     <div class="row">
         <div class="col-12">
-            <h3 class="text-center">ARTICLE FORM</h3>
+            <h3 class="text-center">EDIT ARTICLE FORM</h3>
             <hr>
-            <p class="text-center">Here we allow registered users to offer their insights into health, fitness &
-                routines. Feel free to make your own conribution below.</p>
+            <p class="text-center">EDIT ARTICLE FORM</p>
         </div>
     </div>
 
     <div class="row">
         <div class="col-8 offset-2">
-
-            <form action="{% url 'add_article' %}" method="POST" id="">
+            <form action="{% url 'edit_article' article.id %}" method="POST" id="">
                 {% csrf_token %}
                 <fieldset>
                     <legend class="fieldset-label">Details</legend>
@@ -26,8 +24,8 @@
                     {{ article_form.image | as_crispy_field }}
                 </fieldset>
                 <div class="mb-5">
-                    <button id="article-submit-button" class="btn btn-primary">
-                        <span>Submit</span>
+                    <button id="article-edit-button" class="btn btn-primary">
+                        <span>Edit</span>
                     </button>
                     </a>
                 </div>
