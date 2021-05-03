@@ -29,3 +29,18 @@ def review_product(request, product_id):
         user_review.save()
         messages.success(request, 'Review added!')
         return redirect(redirect_url)
+
+
+@login_required
+def delete_review(request, review_id):
+    """
+    View to delete a review if user is original poster or superuser
+    """
+    review = get_object_or_404(Review, pk=review_id)
+    # redirect_url used as recommended by https://github.com/Tmuat
+    redirect_url = request.POST.get("redirect_url")
+    if request.method == 'POST':
+        if request.user == review.reviewer or request.user.is_superuser:
+            review.delete()
+            messages.success(request, 'Review deleted!')
+            return redirect(redirect_url)

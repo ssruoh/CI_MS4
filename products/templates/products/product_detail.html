@@ -55,6 +55,20 @@
             <hr>
             <p><strong>By {{ review.reviewer }} on {{ review.date }}</strong></p>
             <p>{{ review.product_review }}</p>
+            {% if request.user == review.reviewer or request.user.is_superuser %}
+
+            <div class="row">
+                <form action="{% url 'delete_review' review.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="delete-button">
+                        <button class="btn btn-primary">
+                            <span>Delete review</span>
+                        </button>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </form>
+            </div>
+
+            {% endif %}
             {% endfor %}
             <hr>
         </div>
@@ -63,7 +77,6 @@
             <form action="{% url 'review_product' product.id %}" method="POST" id="review-form">
                 {% csrf_token %}
                 <fieldset>
-                    <legend class="fieldset-label">Submit a review</legend>
                     {{ review_form.product_review | as_crispy_field }}
                 </fieldset>
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
