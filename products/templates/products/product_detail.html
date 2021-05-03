@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
 <div class="bg-cover"></div>
 <div class="container product-container">
@@ -59,9 +58,6 @@
             {% endfor %}
             <hr>
         </div>
-
-
-
         {% if user.is_authenticated %}
         <div class="row">
             <form action="{% url 'review_product' product.id %}" method="POST" id="review-form">
@@ -70,6 +66,7 @@
                     <legend class="fieldset-label">Submit a review</legend>
                     {{ review_form.product_review | as_crispy_field }}
                 </fieldset>
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 <div class="review-button mb-5">
                     <button id="review-button" class="btn btn-primary">
                         <span>Add Review</span>
@@ -78,35 +75,11 @@
             </form>
         </div>
         {% endif %}
-
-
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 </div>
 </div>
-
 {% endblock %}
-
 {% block postloadjs %}
 {{ block.super }}
 {% endblock %}

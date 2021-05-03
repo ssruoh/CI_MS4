@@ -157,6 +157,9 @@ $ git clone https://github.com/ssruoh/CI_MS4
 **Code**
 
 Creating blog app: [https://djangocentral.com/building-a-blog-application-with-django/]
+
+[https://github.com/Tmuat] helped me cleaning up the view for posting reviews in the review app.
+
 Image to right in cards: https://stackoverflow.com/questions/53182024/move-image-to-right-of-card-in-bootstrap/53182241
 
 SOF post noting a necessary, separate package for crispy_forms when using bootstrap5: https://stackoverflow.com/questions/65238459/templatedoesnotexist-at-users-register-bootstrap5-uni-form-html
