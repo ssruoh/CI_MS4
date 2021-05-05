@@ -1,7 +1,31 @@
+/* General */
+
 body {
     background: url('/media/hero-image.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Assistant', sans-serif;
+}
+
+/* Base */
+
+.navbar-brand {
+    font-size: 40px;
+    font-family: 'Saira', sans-serif;
+    font-weight: 600;
+}
+
+.navbar {
+    border-bottom: 2px solid black;
+}
+
+.basket-total {
+    color: black;
+}
+
+ul li {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .products-container {
@@ -97,6 +121,15 @@ select option[value=""] {
     border: 1px solid grey;
 }
 
+/* Products */
+
+.card-footer {
+    font-size: 20px;
+    color: white;
+    background-color: #d91b11;
+}
+
+
 /* Checkout loading icon */
 
 #loading-overlay {
@@ -136,3 +169,14 @@ select option[value=""] {
 }
 
 /* All Articles */
+
+/* Footer */
+
+li a i {
+    color: #0d6efd;
+    font-size: 20px;
+}
+
+footer {
+    border-top: 2px solid black;
+}

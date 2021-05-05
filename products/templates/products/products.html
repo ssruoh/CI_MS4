@@ -4,11 +4,13 @@
 {% block content %}
 <div class="bg-cover"></div>
 <div class="container products-container">
+    <div class="col-8 offset-2">
+        <h2 class="text-uppercase text-center saira-font">High-end fitness equipment</h2>
+    </div>
     <div class="row">
         {% for product in products %}
         <div class="col-12 col-md-6 col-lg-4 col-xl-3 my-4">
             <div class="card">
-
                 {% if product.image %}
                 <a href="{% url 'product_detail' product.id %}">
                     <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
@@ -19,12 +21,12 @@
                 </a>
                 {% endif %}
                 <div class="card-body">
-                    <p class="text-center">{{ product.name }}</p>
+                    <p class="text-center"><strong>{{ product.name }}</strong></p>
                 </div>
                 <div class="card-footer">
                     <div class="row">
                         <div class="col">
-                            <p>{{ product.price }}</p>
+                            <p class="text-center"><strong>$ {{ product.price }}</strong></p>
                         </div>
                     </div>
                 </div>
