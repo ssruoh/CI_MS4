@@ -8,7 +8,7 @@
             <div class="image-container">
                 {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid shake">
                 </a>
                 {% else %}
                 <a href="">
@@ -19,7 +19,7 @@
         </div>
         <div class="col-12 col-md-6 pb-3">
             <div>
-                <h3>{{ product.name }}</h3>
+                <h3 class="saira-font">{{ product.name }}</h3>
                 <p>{{ product.category.friendly_name }}</p>
                 <p>{{ product.price }}</p>
                 <p>{{ product.description }}</p>
@@ -34,13 +34,13 @@
                                     max="10">
                             </div>
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-6 my-3 mx-3">
+                            <input type="submit" value="Add Product" class="btn btn-primary" id="shake">
                             <a href="{% url 'products' %}" class="btn btn-primary">
                                 <span>
                                     Continue Shopping
                                 </span>
                             </a>
-                            <input type="submit" value="Add Product" class="btn btn-primary">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
@@ -60,7 +60,7 @@
             <div class="row">
                 <form action="{% url 'delete_review' review.id %}" method="POST">
                     {% csrf_token %}
-                    <div class="delete-button">
+                    <div class="delete-button mb-3">
                         <button class="btn btn-primary">
                             <span>Delete review</span>
                         </button>
@@ -80,8 +80,8 @@
                     {{ review_form.product_review | as_crispy_field }}
                 </fieldset>
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                <div class="review-button mb-5">
-                    <button id="review-button" class="btn btn-primary">
+                <div class="review-button mb-4">
+                    <button id="review-button" class="btn btn-primary mb-3">
                         <span>Add Review</span>
                     </button>
                 </div>
@@ -92,7 +92,38 @@
 </div>
 </div>
 </div>
+<div class="mb-4"></div>
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}
+
+<script type="text/javascript">
+    setTimeout(function () {
+        $('.shake-delay').submit();
+    }, 5000);
+
+    // from https://jsfiddle.net/macloo/g39k3h3e/, shake product image
+    $('#shake').click(function () {
+        shake($('.shake'));
+    });
+    // adaptable SHAKE function, from 
+    // https://bradleyhamilton.com/projects/shake/index.html 
+    function shake(thing) {
+        var interval = 100;
+        var distance = 10;
+        var times = 6;
+
+        for (var i = 0; i < (times + 1); i++) {
+            $(thing).animate({
+                left: (i % 2 == 0 ? distance : distance * -1)
+            }, interval);
+        }
+        $(thing).animate({
+            left: 0,
+            top: 0
+        }, interval);
+    }
+</script>
+
+
 {% endblock %}

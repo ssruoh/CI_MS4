@@ -418,6 +418,8 @@ This [StackOverflow solution](https://stackoverflow.com/questions/53182024/move-
 
 This [StackOverFlow post](https://stackoverflow.com/questions/65238459/templatedoesnotexist-at-users-register-bootstrap5-uni-form-html) noted that there is a necessary, separate package for crispy_forms when using bootstrap5.
 
+This [StackOverFlow post](https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page) was used to place footer at the bottom of a page, whether content covers full viewport height or not.
+
 **Content**
 
 Products are from https://www.fitnessequipmentireland.ie and https://www.mcsport.ie.

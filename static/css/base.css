@@ -6,6 +6,10 @@ body {
     font-family: 'Assistant', sans-serif;
 }
 
+.shake {
+    position: relative;
+}
+
 /* Base */
 
 .navbar-brand {
@@ -128,7 +132,6 @@ select option[value=""] {
     color: white;
     background-color: #d91b11;
 }
-
 
 /* Checkout loading icon */
 

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container callout-container">
+    <div class="row">
+        <div class="col-12">
+            <div class="jumbotron mt-5">
+                <div class="mx-auto">
+                    <h4 class="display-4 text-center pt-1 saira-font text-uppercase">500 Error
+                    </h4>
+                    <p class="text-center">Looks like something went wrong. Refreshing the page in a bit might work.</p>
+                    <p class="lead text-center pb-3">
+                        <a class="btn btn-primary btn-lg mb-3" href="{% url 'products' %}" role="button">Back to
+                            shopping!</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
