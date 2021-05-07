@@ -422,7 +422,7 @@ This [StackOverFlow post](https://stackoverflow.com/questions/40853952/bootstrap
 
 **Content**
 
-Products are from https://www.fitnessequipmentireland.ie and https://www.mcsport.ie.
+Products are from [Fitness Equipment Ireland](https://www.fitnessequipmentireland.ie) and [McSport](https://www.mcsport.ie).
 
 https://www.webmd.com/fitness-exercise/a-z/kettlebell-workout
 
