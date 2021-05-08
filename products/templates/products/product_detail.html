@@ -35,8 +35,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6 my-3 mx-3">
-                            <input type="submit" value="Add Product" class="btn btn-primary" id="shake"
-                                class="shake-delay">
+                            <input type="submit" value="Add Product" class="btn btn-primary">
                             <a href="{% url 'products' %}" class="btn btn-primary">
                                 <span>
                                     Continue Shopping
@@ -93,19 +92,14 @@
 </div>
 </div>
 </div>
-<div class="mb-4"></div>
+<div class="mb-3"></div>
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}
 
 <script type="text/javascript">
-    // Not working as intended at the moment
-    setTimeout(function () {
-        $('.shake-delay').submit();
-    }, 5000);
-
-    // from https://jsfiddle.net/macloo/g39k3h3e/, shake product image
-    $('#shake').click(function () {
+    // from https://jsfiddle.net/macloo/g39k3h3e/, altered to shake on button hover
+    $('#shake').hover(function () {
         shake($('.shake'));
     });
     // adaptable SHAKE function, from 
@@ -126,6 +120,5 @@
         }, interval);
     }
 </script>
-
 
 {% endblock %}

@@ -66,7 +66,7 @@ All app models can be viewed in the models.py of the corresponding app file.
 
 **Color Scheme**
 
-The site has a simple color scheme utilizing red, white and blue. Blue is utilized for buttons, white for backgrounds and red on occasion to offer contrast to the rest of the site.
+The site has a simple color scheme utilizing red, white and blue. Blue is utilized for buttons, white for backgrounds and red on occasion to give contrast to the rest of the site.
 
 **Typography**
 
@@ -96,11 +96,15 @@ were drafted in MS Paint.
 * Product category selection in navigation menu.
 * Product search functionality with the search bar.
 * Product pages showing info for each product.
+* Logged in users may submit, edit and delete their own articles for others to view.
+* Logged in users may submit and delete their own product reviews.
 
 **Features To Implement**
 
+* A Product Management section allowing adding, deleting or editing products for superusers without the need to use the Django Admin panel.
 * A star rating system to complement the user reviews.
-* Additional Profile page functionality - links to previous submitted reviews and articles for each user.
+* More sophisticated means of filtering products, and a button to skip back to the top of the page. This would be especially necessary with more products.
+* Additional Profile page functionality - listings of previously submitted reviews and articles for each user.
 * Overall more polished styling. Due to time concerns the front-end of the site is still rather bare and could overall use work to make it more appealing.
 
 ** **
@@ -118,13 +122,39 @@ were drafted in MS Paint.
 ## Frameworks, Libraries & programs
 
 1. FontAwesome
-* 
+* Utilized for some of its icons for an improved UX.
 2. Google Fonts
-* 
+* The fonts used for the site are sourced from Google Fonts.
+3. Git
+* Used for development and version control.
+4. Github
+* The primary platform for hosting the project's code.
+5. Sqlite3
+* Used as the initial database during development.
+6. PostgreSQL
+* The second data storage for the project, used for later stages of development and ultimately production.
+5. JQuery
+* Used for enhance button functionality for the shopping bag and product detail pages.
+6. Stripe
+* Used to implement payment processing.
+7. Bootstrap
+* Used for its various site styling tools.
+8. Django
+* Used as the primary web framework of the project.
+9. Crispyforms
+* Used for its form styling.
+10. Heroku
+* Used to deploy the website.
+11. AWS S3
+* Used to store static files and images.
 
 ** **
 
 ## Testing
+
+NOTE THE BIZARRE HEROKU STATICFILES BUG WITH NO ERROR HERE
+https://stackoverflow.com/questions/11266849/heroku-css-file-not-updating
+
 
 **Tools**
 
@@ -136,16 +166,32 @@ were drafted in MS Paint.
 
 **Manual**
 
+Base
+
+* Navigation links and the bag on the navigation bar all work and direct to the correct page, as do the social media links in the footer. The bag calculator displays current bag value as intended.
+* Navigation bar shows the correct links to logged in users (My profile, Log out) and logged out users (Sign up, Log in).
+
 Home page
 
-* 
+* The hero image renders correctly and the button to the products page directs user to products.
+
+Products pages
+
+* All products pages filter the correct product categories and the product image redirects to correct product detail as intended.
+
+Product detail pages
+
+* Correct product detail page renders when accessing it from products. Image link opens image of product in another tab.
 
 **Responsiveness**
 
-* 
+* Responsiveness testing was done on the Google Chrome, Mozilla Firefox and Microsoft Edge browsers. The primary responsiveness testing tool was Chrome DevTools, 
+and various other tablet and mobile device views were tested on it.
 
 **Known Issues**
 
+* The shopping bag and search bar should be fixed to the right side of the navbar.
+* The cards on the products pages are not all the same size, as the image and product name length may currently alter their height.
 * 
 
 ** **
@@ -283,10 +329,10 @@ web: gunicorn elex_fitness.wsgi:application
 8. Login to heroku in the terminal:
 
 ```
-heroku login
+heroku login -i
 ```
 
-9. Disable static to avoid Heroku trying to collect static files during deployment:
+9. Disable static files collection to avoid Heroku trying to collect static files during deployment:
 
 ```
 $ heroku config:set DISABLE_COLLECTSTATIC=1 --app elex-fitness
@@ -310,7 +356,6 @@ $ git push heroku master
 12. App is now deployed. Collection of static files can be re-enabled by removing the corresponding Config Vars entry on the website.
 
 **Migrating to Postgres DB**
-
 
 1. Create a json dump of the local database:
 
@@ -410,6 +455,8 @@ A [Stripe](https://stripe.com/) account is required. Documentation below.
 
 **Code**
 
+While Widget Tweaks wasn't used, the widget method shown in this [Youtube tutorial](https://www.youtube.com/watch?v=VYs-u0g__1A) showcasing Widget Tweaks was used for styling some of the forms.
+
 Creating blog app: []https://djangocentral.com/building-a-blog-application-with-django/
 
 [Tmuat](https://github.com/Tmuat) had helpful suggestions for cleaning up the view for posting reviews in the review app.
@@ -422,15 +469,17 @@ This [StackOverFlow post](https://stackoverflow.com/questions/40853952/bootstrap
 
 **Content**
 
-Products are from [Fitness Equipment Ireland](https://www.fitnessequipmentireland.ie) and [McSport](https://www.mcsport.ie).
+Product names, descriptions and images are from [Fitness Equipment Ireland](https://www.fitnessequipmentireland.ie) and [McSport](https://www.mcsport.ie).
 
-https://www.webmd.com/fitness-exercise/a-z/kettlebell-workout
+The sample Articles are written by [Jodi Helmer](https://www.webmd.com/fitness-exercise/a-z/kettlebell-workout) and [K. Aleisha Fetters](https://www.networldsports.ie/metis-dumbbell-rack-sets-3-tier.html).
 
 https://www.everydayhealth.com/fitness/how-to-clean-your-home-gym-equipment/
 https://images.everydayhealth.com/images/how-to-clean-your-home-gym-equipment-1440x810.jpg?w=1110
 
 **Media**
 
-Hero image from https://www.networldsports.ie/metis-dumbbell-rack-sets-3-tier.html
+The Hero image is from [Net World Sports](https://www.networldsports.ie/metis-dumbbell-rack-sets-3-tier.html).
+Product images are from [Fitness Equipment Ireland](https://www.fitnessequipmentireland.ie) and [McSport](https://www.mcsport.ie).
+The image for K. Aleisha Fetter's dumbbell article is from its [Net World Sports page](https://www.networldsports.ie/metis-dumbbell-rack-sets-3-tier.html).
 
 **Acknowledgments**
