@@ -171,38 +171,44 @@ white background of most pages. The color scheme was chosen due to the colors of
 
 ## Frameworks, Libraries & programs
 
-1. FontAwesome
-* Utilized for some of its icons for an improved UX.
-2. Google Fonts
-* The fonts used for the site are sourced from Google Fonts.
-3. Git
+1. Git
 * Used for development and version control.
-4. Github
+2. Github
 * The primary platform for hosting the project's code.
-5. Sqlite3
-* Used as the initial database during development.
-6. PostgreSQL
-* The second data storage for the project, used for later stages of development and ultimately production.
-5. JQuery
-* Used for enhance button functionality for the shopping bag and product detail pages.
-6. Stripe
-* Used to implement payment processing.
-7. Bootstrap
-* Used for its various site styling tools.
-8. Django
+3. Django
 * Used as the primary web framework of the project.
-9. Crispyforms
-* Used for its form styling.
-10. Heroku
+4. Django Allauth
+* Used for its login and User registration functionality.
+5. Heroku
 * Used to deploy the website.
-11. AWS S3
+6. Gunicorn
+* A necessity for Heroku deployment.
+7. Psycopg2
+* A necessity for using PostgreSQL.
+8. Sqlite3
+* Used as the initial database during development.
+9. PostgreSQL
+* The second data storage for the project, used for later stages of development and ultimately production.
+10. Bootstrap
+* Used for its various site styling tools.
+11. Crispyforms
+* Used for its form styling.
+12. Crispy-bootstrap5
+* A necessity for Crispy Forms styling to function with bootstrap5
+13. AWS S3
 * Used to store static files and images.
+14. Stripe
+* Used to implement payment processing.
+15. FontAwesome
+* Utilized for some of its icons for an improved UX.
+16. Google Fonts
+* The fonts used for the site are sourced from Google Fonts.
 
 ** **
 
 ## Testing
 
-Ideally testing the project would involve some written tests or tools, but due to time limitations testing was mostly limited to manual testing during development.
+Ideally testing the project would involve some written tests or tools, but due to time limitations my testing was mostly limited to manual testing during development.
 
 **Manual**
 
@@ -538,7 +544,8 @@ A [Stripe](https://stripe.com/) account is required. Documentation below.
 
 [Bootstrap](https://getbootstrap.com/) is utilized for its grid system, cards and other responsive elements.
 
-The code for this project overall draws heavily from the Full Stack Frameworks with Django module of Code Institute for its models, forms and stripe functionality, particularly those of the Boutique Ado lessons. 
+The code for this project overall draws heavily from the Full Stack Frameworks with Django module of Code Institute for its models, forms and stripe functionality, 
+particularly those of the Boutique Ado lessons. 
 
 [This jsfiddle](https://jsfiddle.net/macloo/g39k3h3e/) was used to animate the product images on add product button hover.
 
@@ -546,9 +553,13 @@ While Widget Tweaks wasn't used, the widget method shown in this [Youtube tutori
 
 This [Django Central](https://djangocentral.com/building-a-blog-application-with-django/) guide for creating a blog app was used for some direction for writing the articles app.
 
-[Tmuat](https://github.com/Tmuat) had helpful suggestions for cleaning up the view for posting reviews in the review app.
+[The method in this Youtube video](https://www.youtube.com/watch?v=pNVgLDKrK40) was initially used as the template for adding and deleting reviews, 
+but was changed considerably as a result of feedback from [Tmuat](https://github.com/Tmuat), who had helpful suggestions for cleaning up the view.
 
 [Matthew Yong's](https://github.com/MatthewYong/big_brains) solution to editing blogs in his project was adapted for edit_article view of this project.
+
+Attaching user profile to articles as author was done based on the suggestions in these Stack Overflow posts, 
+[#1](https://stackoverflow.com/questions/19799941/attaching-a-current-user-object-to-django-form) and [#2](https://stackoverflow.com/questions/8466768/using-request-user-with-django-modelform).
 
 This [StackOverflow solution](https://stackoverflow.com/questions/53182024/move-image-to-right-of-card-in-bootstrap/53182241) was used to set article image to the right in the article cards.
 
