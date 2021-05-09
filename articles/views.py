@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from django.views import generic
 from django.contrib.auth.decorators import login_required
 from .models import Article
 from .forms import ArticleForm
@@ -71,7 +70,8 @@ def add_article(request):
 @login_required
 def edit_article(request, article_id):
     """
-    View to edit an article
+    View to edit an article, altered from Matthew Yong's solution for a
+    similar app https://github.com/MatthewYong/big_brains/blob/master/blogs/views.py
     """
     article = get_object_or_404(Article, pk=article_id)
     if request.method == 'POST':
@@ -84,7 +84,6 @@ def edit_article(request, article_id):
         article_form = ArticleForm(
             article_form_data, instance=article)
         if article_form.is_valid():
-            article_form.author = request.user
             article_form.save()
             messages.success(request, 'Article updated!')
             return redirect(reverse('article_detail', args=[article.id]))

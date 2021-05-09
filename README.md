@@ -136,8 +136,7 @@ white background of most pages. The color scheme was chosen due to the colors of
 
 ## Wireframes
 
-[Wireframes]() 
-were drafted in MS Paint.
+[Wireframes](https://github.com/ssruoh/CI_MS4/blob/master/static/wireframes/CI_MS4%20wireframes.pdf) were drafted in MS Paint.
 
 ** **
 
@@ -171,7 +170,6 @@ were drafted in MS Paint.
 * JavaScript
 * Jquery
 * Jinja
-
 
 ## Frameworks, Libraries & programs
 
@@ -502,18 +500,21 @@ A [Stripe](https://stripe.com/) account is required. Documentation below.
 > I can upload articles.
 * Logged in users can upload articles.
 
-
 ** **
 
 ## Credits
 
 **Code**
 
+The code for this project draws heavily from the Full Stack Frameworks with Django module of Code Institute, particularly those of the Boutique Ado lessons. 
+
 While Widget Tweaks wasn't used, the widget method shown in this [Youtube tutorial](https://www.youtube.com/watch?v=VYs-u0g__1A) showcasing Widget Tweaks was used for styling some of the forms.
 
-Creating blog app: []https://djangocentral.com/building-a-blog-application-with-django/
+This [Django Central](https://djangocentral.com/building-a-blog-application-with-django/) guide for creating a blog app was used for some direction for writing the articles app.
 
 [Tmuat](https://github.com/Tmuat) had helpful suggestions for cleaning up the view for posting reviews in the review app.
+
+[Matthew Yong's](https://github.com/MatthewYong/big_brains) solution to editing blogs in his project was adapted for edit_article view of this project.
 
 This [StackOverflow solution](https://stackoverflow.com/questions/53182024/move-image-to-right-of-card-in-bootstrap/53182241) was used to set article image to the right in the article cards.
 
@@ -523,17 +524,32 @@ This [StackOverFlow post](https://stackoverflow.com/questions/40853952/bootstrap
 
 **Content**
 
-Product names, descriptions and images are from [Fitness Equipment Ireland](https://www.fitnessequipmentireland.ie) and [McSport](https://www.mcsport.ie).
+Product names, descriptions and images are from [Fitness Equipment Ireland](https://www.fitnessequipmentireland.ie), 
+[McSport](https://www.mcsport.ie) and [Expert Leisure](https://www.expertleisure.ie/).
 
-The sample Articles are written by [Jodi Helmer](https://www.webmd.com/fitness-exercise/a-z/kettlebell-workout) and [K. Aleisha Fetters](https://www.networldsports.ie/metis-dumbbell-rack-sets-3-tier.html).
+The sample articles are written by [Jodi Helmer](https://www.webmd.com/fitness-exercise/a-z/kettlebell-workout) and
+ [K. Aleisha Fetters](https://www.everydayhealth.com/fitness/how-to-clean-your-home-gym-equipment/).
 
-https://www.everydayhealth.com/fitness/how-to-clean-your-home-gym-equipment/
-https://images.everydayhealth.com/images/how-to-clean-your-home-gym-equipment-1440x810.jpg?w=1110
+The structuring of the Database Structure and Deployment sections of this readme draw from [Matthew Yong's project readme](https://github.com/MatthewYong/big_brains).
+
+Any other site content is written by the developer. The readme file itself is similar in structure and some content to my previous readmes for earlier CI projects.
 
 **Media**
 
 The Hero image is from [Net World Sports](https://www.networldsports.ie/metis-dumbbell-rack-sets-3-tier.html).
-Product images are from [Fitness Equipment Ireland](https://www.fitnessequipmentireland.ie) and [McSport](https://www.mcsport.ie).
-The image for K. Aleisha Fetter's dumbbell article is from its [Net World Sports page](https://www.networldsports.ie/metis-dumbbell-rack-sets-3-tier.html).
+
+Product images are from [Fitness Equipment Ireland](https://www.fitnessequipmentireland.ie), [McSport](https://www.mcsport.ie)
+ and [Expert Leisure](https://www.expertleisure.ie/).
+
+The image for K. Aleisha Fetter's article is from its 
+[Net World Sports page](https://images.everydayhealth.com/images/how-to-clean-your-home-gym-equipment-1440x810.jpg?w=1110).
+
+The image for Jodi Helmer's article was sourced from Google Images.
 
 **Acknowledgments**
+
+My mentor Gerald McBride for his helpful feedback and ideas, particularly as to what kinds of custom apps to include in the project.
+
+The Slack Code Institute community for their support.
+
+My friends for helping with testing site functionality.
