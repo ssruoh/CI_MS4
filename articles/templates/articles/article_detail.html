@@ -6,13 +6,13 @@
 <div class="container content-push">
     <div class="row">
         <div class="col-12">
-            <h2 class="text-center">{{ article.title }}</h2>
+            <h2 class="text-center text-uppercase saira-font">{{ article.title }}</h2>
         </div>
         <div class="row">
             {% if article.author == request.user %}
             <div class="col-8 offset-2">
-                <a href="{% url 'edit_article' article.id %}" class="btn btn primary">Edit Article</a>
-                <a href="{% url 'delete_article' article.id %}" class="btn btn primary">Delete Article</a>
+                <a href="{% url 'edit_article' article.id %}" class="btn btn-primary">Edit Article</a>
+                <a href="{% url 'delete_article' article.id %}" class="btn btn-primary">Delete Article</a>
             </div>
             {% endif %}
         </div>

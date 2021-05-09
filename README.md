@@ -204,6 +204,7 @@ white background of most pages. The color scheme was chosen due to the colors of
 
 ## Testing
 
+Ideally testing the project would involve some written tests, but due to time limitations testing was mostly limited to manual testing.
 NOTE THE BIZARRE HEROKU STATICFILES BUG WITH NO ERROR HERE
 https://stackoverflow.com/questions/11266849/heroku-css-file-not-updating
 
@@ -230,10 +231,12 @@ Home page
 Products pages
 
 * All products pages filter the correct product categories and the product image redirects to correct product detail as intended.
+Adding and removing items in the Django Admin panel results in addition/removal of the product.
 
 Product detail pages
 
-* Correct product detail page renders when accessing it from products. Image link opens image of product in another tab.
+* Correct product detail page renders when accessing it from products. Image link opens image of product in another tab. Logged in users can post reviews, and have a button to delete their own as intended.
+Superusers can remove any review.
 
 **Responsiveness**
 
@@ -506,7 +509,11 @@ A [Stripe](https://stripe.com/) account is required. Documentation below.
 
 **Code**
 
-The code for this project draws heavily from the Full Stack Frameworks with Django module of Code Institute, particularly those of the Boutique Ado lessons. 
+[Bootstrap](https://getbootstrap.com/) is utilized for its grid system, cards and other responsive elements.
+
+The code for this project overall draws heavily from the Full Stack Frameworks with Django module of Code Institute, particularly those of the Boutique Ado lessons. 
+
+[This jsfiddle](https://jsfiddle.net/macloo/g39k3h3e/) was used to animate the product images on add product button hover.
 
 While Widget Tweaks wasn't used, the widget method shown in this [Youtube tutorial](https://www.youtube.com/watch?v=VYs-u0g__1A) showcasing Widget Tweaks was used for styling some of the forms.
 
@@ -530,7 +537,7 @@ Product names, descriptions and images are from [Fitness Equipment Ireland](http
 The sample articles are written by [Jodi Helmer](https://www.webmd.com/fitness-exercise/a-z/kettlebell-workout) and
  [K. Aleisha Fetters](https://www.everydayhealth.com/fitness/how-to-clean-your-home-gym-equipment/).
 
-The structuring of the Database Structure and Deployment sections of this readme draw from [Matthew Yong's project readme](https://github.com/MatthewYong/big_brains).
+The structuring of the Database Structure and Deployment sections of this readme are presented in a manner similar to that of [Matthew Yong's project readme](https://github.com/MatthewYong/big_brains).
 
 Any other site content is written by the developer. The readme file itself is similar in structure and some content to my previous readmes for earlier CI projects.
 
