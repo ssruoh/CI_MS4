@@ -40,9 +40,9 @@ The site is an e-commerce platform that incorporates community-building elements
 Sqlite3 was initially used to store data for this project, with a migration to PostgreSQL being done during development.
 The following apps have corresponding databases:
 
-* Profiles
 * Products
 * Checkout
+* Profiles
 * Articles
 * Reviews
 
@@ -58,7 +58,61 @@ This is what a Product model of the project looks like:
 | image_url | URLField | max_length=1024, null=True, blank=True |
 | image | ImageField | null=True, blank=True |
 
-All app models can be viewed in the models.py of the corresponding app file.
+
+This is what an Order model for the Checkout app looks like:
+
+| Name | Type | Validation |
+|---|---|---|
+| order_number | CharField | max_length=32, null=False, editable=False |
+| user_profile | ForeignKey | UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders' |
+| full_name | CharField | max_length=60, null=False, blank=False |
+| email | EmailField | max_length=60, null=False, blank=False |
+| phone_number | CharField | max_length=32, null=False, blank=False |
+| country | CountryField | blank_label='Country *', null=False, blank=False |
+| post_code | CharField | max_length=32, null=True, blank=True |
+| town_or_city | CharField | max_length=32, null=False, blank=False |
+| street_address | CharField | max_length=100, null=False, blank=False |
+| county | CharField | max_length=60, null=True, blank=True |
+| date | DateTimeField | auto_now_add=True |
+| delivery_cost | DecimalField | max_digits=6, decimal_places=2, null=False, default=0 |
+| order_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0 |
+| grand_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0 |
+| original_bag | TextField | null=False, blank=False, default='' |
+| stripe_pid | CharField | max_length=100, null=False, blank=False, default='' |
+
+This is what a UserProfile model of profiles app of the project looks like:
+
+| Name | Type | Validation |
+|---|---|---|
+| user | OneToOneField | User, on_delete=models.CASCADE |
+| default_phone_number | CharField | max_length=32, null=True, blank=True |
+| default_street_address | CharField | max_length=100, null=True, blank=True |
+| default_post_code | CharField | max_length=32, null=True, blank=True |
+| default_town_or_city | CharField | max_length=32, null=True, blank=True |
+| default_county | CharField | max_length=60, null=True, blank=True |
+| default_country | CountryField | blank_label='Country', null=True, blank=True |
+
+
+This is what an Article model of the articles app of the project looks like:
+
+| Name | Type | Validation |
+|---|---|---|
+| title | CharField | max_length=100, null=False, blank=False |
+| article_body | CharField | max_length=4000, null=False, blank=False |
+| description | CharField | max_length=100, null=False, blank=False |
+| image | URLField | max_length=200, null=False, blank=False |
+| author | ForeignKey |User, default=None, on_delete=models.CASCADE |
+| date | DateTimeField | auto_now=True |
+
+This is what a Review model of the reviews app of the project looks like:
+
+| Name | Type | Validation |
+|---|---|---|
+| product | ForeignKey | Product, related_name='reviews', on_delete=models.CASCADE |
+| reviewer | ForeignKey | User, default=None, on_delete=models.CASCADE |
+| product_review | TextField | max_length=250, null=False, blank=False |
+| image | URLField | max_length=200, null=False, blank=False |
+| date | DateTimeField | auto_now=True |
 
 ** **
 
