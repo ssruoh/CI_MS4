@@ -58,7 +58,6 @@ This is what a Product model of the project looks like:
 | image_url | URLField | max_length=1024, null=True, blank=True |
 | image | ImageField | null=True, blank=True |
 
-
 This is what an Order model for the Checkout app looks like:
 
 | Name | Type | Validation |
@@ -91,7 +90,6 @@ This is what a UserProfile model of profiles app of the project looks like:
 | default_town_or_city | CharField | max_length=32, null=True, blank=True |
 | default_county | CharField | max_length=60, null=True, blank=True |
 | default_country | CountryField | blank_label='Country', null=True, blank=True |
-
 
 This is what an Article model of the articles app of the project looks like:
 
@@ -145,10 +143,10 @@ white background of most pages. The color scheme was chosen due to the colors of
 * Responsive on all screen sizes.
 * All pages have a uniform navigation bar and footer.
 * Signup and Login pages. 
-* Profile pages.
+* Profile pages, where stored delivery information and past orders may be viewed.
 * Product category selection in navigation menu.
 * Product search functionality with the search bar.
-* Product pages showing info for each product.
+* Product pages showing info for each product, and a button to add a specified number of products to bag.
 * Logged in users may submit, edit and delete their own articles for others to view.
 * Logged in users may submit and delete their own product reviews.
 
@@ -158,7 +156,7 @@ white background of most pages. The color scheme was chosen due to the colors of
 * A star rating system to complement the user reviews.
 * More sophisticated means of filtering products, and a button to skip back to the top of the page. This would be especially necessary with more products.
 * Additional Profile page functionality - listings of previously submitted reviews and articles for each user.
-* Overall more polished styling. Due to time concerns the front-end of the site is still rather bare and could overall use work to make it more appealing.
+* Overall more polished styling. Due to time limitations the front-end of the site is still rather bare and could overall use much more work to make it more appealing.
 
 ** **
 
@@ -204,39 +202,67 @@ white background of most pages. The color scheme was chosen due to the colors of
 
 ## Testing
 
-Ideally testing the project would involve some written tests, but due to time limitations testing was mostly limited to manual testing.
-NOTE THE BIZARRE HEROKU STATICFILES BUG WITH NO ERROR HERE
-https://stackoverflow.com/questions/11266849/heroku-css-file-not-updating
-
-
-**Tools**
-
-[Results]()
-
-[Results]()
-
-[Results]()
+Ideally testing the project would involve some written tests or tools, but due to time limitations testing was mostly limited to manual testing during development.
 
 **Manual**
 
 Base
 
-* Navigation links and the bag on the navigation bar all work and direct to the correct page, as do the social media links in the footer. The bag calculator displays current bag value as intended.
+* Tested that all navigation links and the bag on the navigation bar work and direct to the correct page, as do the social media links in the footer. 
+The bag calculator displays current bag value as intended when products are added and deleted.
+
 * Navigation bar shows the correct links to logged in users (My profile, Log out) and logged out users (Sign up, Log in).
+
+* Social links in the footer redirect to correct sites.
 
 Home page
 
 * The hero image renders correctly and the button to the products page directs user to products.
 
-Products pages
+Products page
 
 * All products pages filter the correct product categories and the product image redirects to correct product detail as intended.
-Adding and removing items in the Django Admin panel results in addition/removal of the product.
+Adding and removing items in the Django Admin panel results in addition/removal of the product on the page.
 
 Product detail pages
 
 * Correct product detail page renders when accessing it from products. Image link opens image of product in another tab. Logged in users can post reviews, and have a button to delete their own as intended.
 Superusers can remove any review.
+
+Articles page
+
+* Articles render correctly. Clicking on article description opens article detail page.
+
+Article detail pages
+
+* Article title, description, image and body load correctly. If viewed by the author, edit and delete buttons for the article are visible.
+
+Profile page
+
+* Updating the Default delivery details works when clicking Update. If orders have been made, they show on the right. Clicking on order number opens the order confirmation page for that order.
+
+Bag page
+
+* Added products show on the page. Changing product amount and clicking Update updates the bag total correctly. Delete button removes the product from bag entirely. Keep shopping button getbootstrap
+back to products, and Checkout button goes to Checkout page.
+* Empty bag renders a page with no products, and a button that goes back to products.
+
+Checkout page
+
+* Products and total show correctly. Edit bag button goes back to bag page. Filling Stripe test card detail for successful payment and clicking Checkout button goes to Checkout success page.
+* Filling a test card that requires additional confirmation renders blue background and spinning icon.
+
+Checkout success page
+
+* Order details render correctly. Email confirmation is sent.
+
+Login page
+
+* Sign in button with correct details works. Incorrect details throw an error. 
+
+Sign up page
+
+* Filling the form with prerequisite details creates an account. Email verification is sent.
 
 **Responsiveness**
 
@@ -247,7 +273,8 @@ and various other tablet and mobile device views were tested on it.
 
 * The shopping bag and search bar should be fixed to the right side of the navbar.
 * The cards on the products pages are not all the same size, as the image and product name length may currently alter their height.
-* 
+* Pushing code will not render changes to static files on the Heroku site [This Stack Overflow post](https://stackoverflow.com/questions/11266849/heroku-css-file-not-updating) notes 
+that restarting with heroku restart fixes the issue.
 
 ** **
 
@@ -511,7 +538,7 @@ A [Stripe](https://stripe.com/) account is required. Documentation below.
 
 [Bootstrap](https://getbootstrap.com/) is utilized for its grid system, cards and other responsive elements.
 
-The code for this project overall draws heavily from the Full Stack Frameworks with Django module of Code Institute, particularly those of the Boutique Ado lessons. 
+The code for this project overall draws heavily from the Full Stack Frameworks with Django module of Code Institute for its models, forms and stripe functionality, particularly those of the Boutique Ado lessons. 
 
 [This jsfiddle](https://jsfiddle.net/macloo/g39k3h3e/) was used to animate the product images on add product button hover.
 

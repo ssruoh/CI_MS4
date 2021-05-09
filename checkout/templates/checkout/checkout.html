@@ -8,7 +8,7 @@
 <div class="container content-push">
     <div class="row">
         <div class="col-12 col-lg-6">
-            <h1 class="text-center">Order Summary</h1>
+            <h3 class="text-center">Order Summary</h3>
             {% if bag_items %}
             <div class="table-responsive">
                 <table class="table">
@@ -66,7 +66,7 @@
         </div>
 
         <div class="col-12 col-lg-6">
-            <p class="text-center">Fill out the shipping details here</p>
+            <h3 class="text-center">Fill out the shipping details here</h3>
             <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
                 {% csrf_token %}
                 <fieldset>
