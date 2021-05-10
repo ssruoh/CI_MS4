@@ -241,7 +241,15 @@ Articles page
 
 Article detail pages
 
-* Article title, description, image and body load correctly. If viewed by the author, edit and delete buttons for the article are visible.
+* Article title, description, image and body load correctly. If viewed by the author, edit and delete buttons for the article are visible. Edit button goes to edit article page, delete deletes article.
+
+Article add page
+
+* Article fields render correctly. Submit button adds article to Articles page.
+
+Article edit page
+
+* Article fields render with existing information prefilled. Edit button edits article.
 
 Profile page
 
@@ -249,7 +257,7 @@ Profile page
 
 Bag page
 
-* Added products show on the page. Changing product amount and clicking Update updates the bag total correctly. Delete button removes the product from bag entirely. Keep shopping button getbootstrap
+* Added products show on the page. Changing product amount and clicking Update updates the bag total correctly. Delete button removes the product from bag entirely. Keep shopping button goes
 back to products, and Checkout button goes to Checkout page.
 * Empty bag renders a page with no products, and a button that goes back to products.
 
@@ -307,7 +315,7 @@ The copy of the Github repository can be forked to another account for viewing o
 **Creating A Local Clone of the Github Repository**
 
 1. Login to Github and locate the [repository](https://github.com/ssruoh/CI_MS4)
-2. Click on the green Code button
+2. Click on the Code button
 3. Click on the clipboard icon under "Clone with HTTPS" to copy the link
 4. Open Git Bash
 5. Change the current working directory to the one where you want the clone to be created.
@@ -544,7 +552,7 @@ A [Stripe](https://stripe.com/) account is required. Documentation below.
 
 [Bootstrap](https://getbootstrap.com/) is utilized for its grid system, cards and other responsive elements.
 
-The code for this project overall draws heavily from the Full Stack Frameworks with Django module of Code Institute for its models, forms and stripe functionality, 
+The code for this project overall draws heavily from the Full Stack Frameworks with Django module of Code Institute for its models, forms, views and stripe functionality, 
 particularly those of the Boutique Ado lessons. 
 
 [This jsfiddle](https://jsfiddle.net/macloo/g39k3h3e/) was used to animate the product images on add product button hover.
