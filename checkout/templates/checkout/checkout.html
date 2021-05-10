@@ -2,7 +2,6 @@
 {% load static %}
 {% load bag_tools %}
 
-
 {% block content %}
 <div class="bg-cover"></div>
 <div class="container content-push">
@@ -21,7 +20,6 @@
                             <th scope="col">Total</th>
                         </tr>
                     </thead>
-
                     {% for item in bag_items %}
                     <tr>
                         <td>
@@ -48,7 +46,6 @@
                         </td>
                     </tr>
                     {% endfor %}
-
                     <tr>
                         <td colspan="5">
                             <p>Bag: ${{ total|floatformat:2 }}</p>
@@ -62,9 +59,7 @@
                 </table>
             </div>
             {% endif %}
-
         </div>
-
         <div class="col-12 col-lg-6">
             <h3 class="text-center">Fill out the shipping details here</h3>
             <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
@@ -104,7 +99,6 @@
                         The order grand total of ${{ grand_total|floatformat:2 }} will be charged.
                     </p>
                 </fieldset>
-
                 <div class="checkout-button mb-5">
                     <a href="{% url 'view_bag' %}" class="btn btn-primary">
                         <span>Edit Bag</span>
@@ -113,7 +107,6 @@
                         <span>Checkout</span>
                     </button>
                 </div>
-
             </form>
         </div>
     </div>

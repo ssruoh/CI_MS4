@@ -11,7 +11,6 @@
             <p class="text-center">Want to make some changes to an article you posted? Do so here.</p>
         </div>
     </div>
-
     <div class="row">
         <div class="col-8 offset-2">
             <form action="{% url 'edit_article' article.id %}" method="POST" id="">
@@ -29,12 +28,9 @@
                     </button>
                     </a>
                 </div>
-
             </form>
-
         </div>
     </div>
-
 </div>
 
 {% endblock %}

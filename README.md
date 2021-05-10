@@ -1,6 +1,6 @@
 # The ELEX Fitness Website
 
-ELEX Fitness is a website that whose purpose is to sell various types of workout equipment. The site supports payment processing and anyone can make orders, 
+ELEX Fitness is a website whose purpose is to sell various types of workout equipment. The site supports payment processing and anyone can make orders, 
 but the site also supports signing up and allows logged in users to save their delivery details, upload fitness-related articles and to post product reviews.
 Logged in users can also view their order history. Administrators can use an admin portal to to add or delete products, or to moderate reviews and articles.
 The site is an e-commerce platform that incorporates community-building elements to reward returning visitors who decide to make an account.
@@ -279,7 +279,7 @@ and various other tablet and mobile device views were tested on it.
 
 * The shopping bag and search bar should be fixed to the right side of the navbar.
 * The cards on the products pages are not all the same size, as the image and product name length may currently alter their height.
-* Pushing code will not render changes to static files on the Heroku site [This Stack Overflow post](https://stackoverflow.com/questions/11266849/heroku-css-file-not-updating) notes 
+* Pushing code will not render changes to static files on the Heroku site. [This Stack Overflow post](https://stackoverflow.com/questions/11266849/heroku-css-file-not-updating) notes 
 that restarting with heroku restart fixes the issue.
 
 ** **
