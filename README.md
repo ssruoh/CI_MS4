@@ -142,7 +142,7 @@ white background of most pages. The color scheme was chosen due to the colors of
 
 * Responsive on all screen sizes.
 * All pages have a uniform navigation bar and footer.
-* Signup and Login pages. 
+* Functional signup and Login pages. 
 * Profile pages, where stored delivery information and past orders may be viewed.
 * Product category selection in navigation menu.
 * Product search functionality with the search bar.
